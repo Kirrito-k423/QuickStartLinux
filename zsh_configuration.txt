@@ -1,0 +1,23 @@
+zsh configuration
+-----------------
+zsh version               : 5.8
+host operating system     : x86_64-pc-linux-gnu
+source code location      : .
+compiler                  : gcc -std=gnu99
+preprocessor flags        :
+executable compiler flags :  -Wall -Wmissing-prototypes -O2
+module compiler flags     :  -Wall -Wmissing-prototypes -O2 -fPIC
+executable linker flags   :   -s -rdynamic
+module linker flags       :   -s -shared
+library flags             : -lgdbm -ldl -lncursesw -lrt -lm  -lc
+installation basename     : zsh
+binary install path       : /home/users/industry/isc2020/iscst11/shaojiemike/Install/zsh/bin
+man page install path     : /home/users/industry/isc2020/iscst11/shaojiemike/Install/zsh/share/man
+info install path         : /home/users/industry/isc2020/iscst11/shaojiemike/Install/zsh/share/info
+functions install path    : /home/users/industry/isc2020/iscst11/shaojiemike/Install/zsh/share/zsh/5.8/functions
+See config.modules for installed modules and functions.
+
+WARNING: zsh will be linked against libgdbm.
+This means the binary is covered by the GNU General Public License.
+This does not affect the source code.
+Run configure with --disable-gdbm if required.
