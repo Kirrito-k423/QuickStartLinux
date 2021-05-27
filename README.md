@@ -13,5 +13,10 @@ chmod +x set_tsj.sh
 
 ```
  compinit: function definition file not found
-
 ```
+solved by
+add 
+```
+export FPATH=$HOME/Install/zsh/share/zsh/5.8/functions:$FPATH 
+```
+in your .zshrc
