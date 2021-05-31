@@ -34,6 +34,9 @@ ctrl + O/I
 
 u / ctrl+r
 
-## tab multiple lines
+## tab multiple lines(14-23)
 
 Press V to switch to VISUAL LINE mode and highlight the lines you want to indent by pressing j. Then press > to indent them. So the complete command would be Vjjj>.
+
+:14,23>
+
