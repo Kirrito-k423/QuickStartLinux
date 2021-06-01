@@ -40,3 +40,10 @@ Press V to switch to VISUAL LINE mode and highlight the lines you want to indent
 
 :14,23>
 
+## delete
+
+delete all
+:%d
+
+:3,17d
+
