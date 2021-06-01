@@ -106,3 +106,9 @@ hca_id: mlx5_0
                         port_lmc:               0x00
                         link_layer:             InfiniBand
 ```
+
+## Linux core version
+```
+cat /proc/version
+Linux version 4.15.0-139-generic (buildd@lgw01-amd64-035) (gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)) #143-Ubuntu SMP Tue Mar 16 01:30:17 UTC 2021
+```
