@@ -11,3 +11,4 @@ cat /etc/passwd | awk -F: '{print $1}'
 $ groups shaojiemike
 shaojiemike : acsastaff sudo
 ```
+
