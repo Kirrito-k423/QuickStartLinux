@@ -11,10 +11,12 @@ j to next line
 ```
 
 Add//comments on lines 10-20
+起始行号，结束行号s#^#注释符#g
 
 :10,50s#^#//#g
 
 Delete//comments on lines 10-20
+起始行号，结束行号s#^注释符##g
 
 :10,20s#^//##g
 
@@ -56,5 +58,14 @@ dd
 2. 将光标移动到要复制的文本的结束的地方，按y复制。此时vim会自动将光标定位到选中文本的开始的地方，并退出可视模式。
 
 3. 我移动光标到文本结束的地方，按p粘贴。
+
+## history 
+
+q:
+: or / up/down
+
+## turn off highlighting until the next search
+
+:noh
 
 
