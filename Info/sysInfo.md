@@ -27,7 +27,22 @@ cat /proc/meminfo
 ```
 uname -a
 ```
+### how to check linux is centos or ubuntu
+Ubuntu
+```
+cat /etc/version
+```
+CentOS
+```
+cat /etc/issue
+```
+```
+Use /etc/os-release
+awk -F= '/^NAME/{print $2}' /etc/os-release
 
+Use the lsb_release tools if available
+lsb_release -d | awk -F"\t" '{print $2}'
+```
 ## PCIE
 
 ### 2/3/4
