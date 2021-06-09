@@ -13,6 +13,16 @@ ip command : Recommended new network config utility.
 cat /proc/cpuinfo
 lscpu
 ```
+[stack](https://unix.stackexchange.com/questions/468766/understanding-output-of-lscpu)
+“CPU(s): 56” represents the number of logical cores, which equals “Thread(s) per core” × “Core(s) per socket” × “Socket(s)”.
+
+ One socket is one physical CPU package (which occupies one socket on the motherboard); 
+ 
+ each socket hosts a number of physical cores, and each core can run one or more threads. 
+ 
+ In your case, you have two sockets, each containing a 14-core Xeon E5-2690 v4 CPU, and since that supports hyper-threading with two threads, each core can run two threads.
+
+“NUMA node” represents the memory architecture; “NUMA” stands for “non-uniform memory architecture”. In your system, each socket is attached to certain DIMM slots, and each physical CPU package contains a memory controller which handles part of the total RAM. As a result, not all physical memory is equally accessible from all CPUs: one physical CPU can directly access the memory it controls, but has to go through the other physical CPU to access the rest of memory. In your system, logical cores 0–13 and 28–41 are in one NUMA node, the rest in the other. So yes, one NUMA node equals one socket, at least in typical multi-socket Xeon systems.
 
 ### L2/ L3 cache
 ```
