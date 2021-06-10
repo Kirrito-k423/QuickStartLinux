@@ -50,9 +50,9 @@ delete all
 :3,17d
 
 delete one line
-dd
-
 ## copy
+
+dd
 1. 将光标移动到要复制的文本开始的地方，按v进入可视模式。
 
 2. 将光标移动到要复制的文本的结束的地方，按y复制。此时vim会自动将光标定位到选中文本的开始的地方，并退出可视模式。
@@ -69,3 +69,10 @@ q:
 :noh
 
 
+# cut
+
+Press v to select characters, 
+uppercase V to select whole lines,
+Ctrl-v to select rectangular blocks (use Ctrl-q if Ctrl-v is mapped to paste).
+
+d to cut
