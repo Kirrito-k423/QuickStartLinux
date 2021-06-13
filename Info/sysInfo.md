@@ -123,6 +123,17 @@ df -h
 du -h --max-depth=1
 sudo fdisk -l
 ```
+
+### disk quota
+```
+quota
+diskUsage 3 hours 统计一次
+```
+### file nums
+```
+for D in *; do echo $D; find $D -type f| wc -l; done
+```
+
 ### Hard drive / SSD
 ```
 cat /sys/block/sda/queue/rotational
