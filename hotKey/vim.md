@@ -79,3 +79,41 @@ uppercase V to select whole lines,
 Ctrl-v to select rectangular blocks (use Ctrl-q if Ctrl-v is mapped to paste).
 
 d to cut
+
+# find
+普通查找
+命令模式下，按’/’或’?’，然后输入要查找的字符，Enter。
+
+/和?的区别是，一个向前（下）找，一个向后（上）。
+
+全词匹配
+如果你输入 “/int”，你也可能找到 “print”。
+要找到以 “int” 结尾的单词，可以用：
+
+/int\>
+
+“\>” 是一个特殊的记号，表示只匹配单词末尾。类似地，”\<” 只匹配单词的开头。
+
+一次，要匹配一个完整的单词 “int”，只需：
+
+/\< int\>
+
+不区分大小写
+默认是区分大小写的
+先输入
+
+:set ignorecase //忽略大小写
+
+进行查找
+
+再输入
+:set noignorecase //恢复到大小写敏感
+
+# 撤销与恢复
+
+u   撤销上一步的操作
+Ctrl+r 恢复上一步被撤销的操作
+
+# 前进与后退
+
+ Ctrl-O 执行后退，使用 Ctrl-I 执行前进。
