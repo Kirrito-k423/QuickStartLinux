@@ -123,6 +123,12 @@ df -h
 du -h --max-depth=1
 sudo fdisk -l
 ```
+
+### user quota
+```
+quota
+diskUsage
+```
 ### Hard drive / SSD
 ```
 cat /sys/block/sda/queue/rotational
