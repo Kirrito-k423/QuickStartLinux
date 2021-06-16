@@ -1,5 +1,7 @@
+
 # vim
 
+[useful tips](https://www.ele.uri.edu/faculty/vetter/Other-stuff/vi/vimtips.html)
 ## Code comment
 
 can not use ctrl + c (virtul block conflict with paste)
@@ -117,3 +119,7 @@ Ctrl+r 恢复上一步被撤销的操作
 # 前进与后退
 
  Ctrl-O 执行后退，使用 Ctrl-I 执行前进。
+
+# 对齐
+typing gg=G will reindent the entire file. 
+In visual mode, typing = will fix indentation of the current section

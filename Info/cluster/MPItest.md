@@ -17,6 +17,6 @@ int main(int argc, char *argv[]){
 
 ```
 ```
-mpicc mpi.c  
+mpiicc/mpicc mpi.c 
 mpiexec -n 32 ./a.out
 ```
