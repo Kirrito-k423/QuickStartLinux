@@ -30,6 +30,11 @@ Remove # comments on lines 10-20
 
 :10,20s/^/#/g
 
+### replace
+
+s/#/ /g
+将 # 替换成空格 s
+
 ## go/back the location
 
 ctrl + O/I
@@ -52,6 +57,20 @@ delete all
 :3,17d
 
 delete one line
+
+x   - delete current character
+dw  - delete current word
+dd  - delete current line
+5dd - delete five lines
+
+d$  - delete to end of line
+d0  - delete to beginning of line
+
+:1,.d
+delete to beginning of file
+
+:.,$d
+delete to end of file
 ## copy
 
 dd
