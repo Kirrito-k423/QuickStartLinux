@@ -17,3 +17,7 @@ terminate called without an active exception
 [1]    2148762 abort (core dumped)  sourcetrail
 
 ```
+
+```
+mobaXterm 就可以解决，支持xInput
+```
