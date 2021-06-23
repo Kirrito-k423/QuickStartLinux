@@ -1,0 +1,1 @@
+ls |grep "^[0-9]" |xargs -i cp -r {} $SCRATCH/shaojiemike/ISC-GPAW/codeTask/
