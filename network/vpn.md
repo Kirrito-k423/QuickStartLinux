@@ -19,6 +19,11 @@ mv clash-linux-amd64-v1.6.0 clash
 rm ~/.config/clash/config.yaml 
 wget --no-check-certificate -O ~/.config/clash/config.yaml https://dogess.app/link/Wck6HIGAybK1sLFR?clash=1
 ```
+```
+INFO[0000] Can't find config, create a initial config file
+INFO[0000] Can't find MMDB, start download
+mv config.yaml  Country.mmdb
+```
 
 ## proxy function
 ```
@@ -47,6 +52,9 @@ wget --no-check-certificate -O ~/.config/clash/config.yaml https://dogess.app/li
 set_proxy
 test_proxy
 ```
+
+## cluster 超算没网
+delete DIRECT in Domestic 
 
 # 使用clash为局域网内所有设备添加网络代理
 
