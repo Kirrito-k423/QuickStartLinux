@@ -1,0 +1,221 @@
+proxy-groups:
+-
+    name: '🍂 Domestic'
+    type: select
+    proxies:
+      - DIRECT
+      - '🍃 Proxies'
+
+rules:
+# Local Area Network
+- DOMAIN-KEYWORD,announce,DIRECT
+- DOMAIN-KEYWORD,torrent,DIRECT
+- DOMAIN-KEYWORD,tracker,DIRECT
+- DOMAIN-SUFFIX,smtp,DIRECT
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+
+
+# (Asian_TV)
+# > Bilibili
+- DOMAIN-KEYWORD,bilibili,🍂 Domestic
+- DOMAIN-SUFFIX,acg.tv,🍂 Domestic
+- DOMAIN-SUFFIX,acgvideo.com,🍂 Domestic
+- DOMAIN-SUFFIX,b23.tv,🍂 Domestic
+- DOMAIN-SUFFIX,biliapi.com,🍂 Domestic
+- DOMAIN-SUFFIX,biliapi.net,🍂 Domestic
+- DOMAIN-SUFFIX,bilibili.com,🍂 Domestic
+- DOMAIN-SUFFIX,biligame.com,🍂 Domestic
+- DOMAIN-SUFFIX,biligame.net,🍂 Domestic
+- DOMAIN-SUFFIX,hdslb.com,🍂 Domestic
+- DOMAIN-SUFFIX,im9.com,🍂 Domestic
+
+# > IQIYI
+- DOMAIN-KEYWORD,qiyi,🍂 Domestic
+- DOMAIN-SUFFIX,qy.net,🍂 Domestic
+
+# > letv
+- DOMAIN-SUFFIX,api.mob.app.letv.com,🍂 Domestic
+
+# > NeteaseMusic
+- DOMAIN-SUFFIX,163yun.com,🍂 Domestic
+- DOMAIN-SUFFIX,music.126.net,🍂 Domestic
+- DOMAIN-SUFFIX,music.163.com,🍂 Domestic
+
+# > Tencent Video
+- DOMAIN-SUFFIX,vv.video.qq.com,🍂 Domestic
+
+# China Area Network
+# > Microsoft
+- DOMAIN-SUFFIX,microsoft.com,🍂 Domestic
+- DOMAIN-SUFFIX,windows.net,🍂 Domestic
+- DOMAIN-SUFFIX,sfx.ms,🍂 Domestic
+- DOMAIN-SUFFIX,sharepoint.com,🍂 Domestic
+- DOMAIN-KEYWORD,officecdn,🍂 Domestic
+# > Blizzard
+- DOMAIN-SUFFIX,blizzard.com,🍂 Domestic
+- DOMAIN-SUFFIX,battle.net,🍂 Domestic
+- DOMAIN,blzddist1-a.akamaihd.net,🍂 Domestic
+# > Steam
+- DOMAIN-SUFFIX,steampowered.com,🍂 Domestic
+- DOMAIN-SUFFIX,steam-chat.com,🍂 Domestic
+- DOMAIN-KEYWORD,steamcdn,🍂 Domestic
+- DOMAIN-KEYWORD,steamstore,🍂 Domestic
+- DOMAIN-KEYWORD,steamuserimages,🍂 Domestic
+- DOMAIN-KEYWORD,steambroadcast,🍂 Domestic
+# > Tencent
+#USER-AGENT,MicroMessenger%20Client,🍂 Domestic
+#USER-AGENT,WeChat*,🍂 Domestic
+- DOMAIN-SUFFIX,qq.com,🍂 Domestic
+- DOMAIN-SUFFIX,qpic.cn,🍂 Domestic
+- DOMAIN-SUFFIX,tencent.com,🍂 Domestic
+# > Alibaba
+- DOMAIN-SUFFIX,alibaba.com,🍂 Domestic
+- DOMAIN-SUFFIX,alicdn.com,🍂 Domestic
+- DOMAIN-SUFFIX,amap.com,🍂 Domestic
+- DOMAIN-SUFFIX,dingtalk.com,🍂 Domestic
+- DOMAIN-SUFFIX,taobao.com,🍂 Domestic
+- DOMAIN-SUFFIX,tmall.com,🍂 Domestic
+- DOMAIN-SUFFIX,ykimg.com,🍂 Domestic
+- DOMAIN-SUFFIX,youku.com,🍂 Domestic
+- DOMAIN-SUFFIX,xiami.com,🍂 Domestic
+- DOMAIN-SUFFIX,xiami.net,🍂 Domestic
+# > NetEase
+- DOMAIN-SUFFIX,163.com,🍂 Domestic
+- DOMAIN-SUFFIX,126.net,🍂 Domestic
+- DOMAIN-SUFFIX,163yun.com,🍂 Domestic
+# > Sohu
+- DOMAIN-SUFFIX,sohu.com.cn,🍂 Domestic
+- DOMAIN-SUFFIX,itc.cn,🍂 Domestic
+- DOMAIN-SUFFIX,sohu.com,🍂 Domestic
+- DOMAIN-SUFFIX,v-56.com,🍂 Domestic
+# > Sina
+- DOMAIN-SUFFIX,weibo.com,🍂 Domestic
+- DOMAIN-SUFFIX,weibo.cn,🍂 Domestic
+# > JD
+- DOMAIN-SUFFIX,jd.com,🍂 Domestic
+- DOMAIN-SUFFIX,jd.hk,🍂 Domestic
+- DOMAIN-SUFFIX,360buyimg.com,🍂 Domestic
+# > MI
+- DOMAIN-SUFFIX,duokan.com,🍂 Domestic
+- DOMAIN-SUFFIX,mi-img.com,🍂 Domestic
+- DOMAIN-SUFFIX,mifile.cn,🍂 Domestic
+- DOMAIN-SUFFIX,xiaomi.com,🍂 Domestic
+# > bilibili
+- DOMAIN-SUFFIX,acgvideo.com,🍂 Domestic
+- DOMAIN-SUFFIX,bilibili.com,🍂 Domestic
+- DOMAIN-SUFFIX,hdslb.com,🍂 Domestic
+# > iQiyi
+- DOMAIN-SUFFIX,iqiyi.com,🍂 Domestic
+- DOMAIN-SUFFIX,iqiyipic.com,🍂 Domestic
+- DOMAIN-SUFFIX,71.am.com,🍂 Domestic
+# > HunanTV
+- DOMAIN-SUFFIX,hitv.com,🍂 Domestic
+- DOMAIN-SUFFIX,mgtv.com,🍂 Domestic
+# > Meitu
+- DOMAIN-SUFFIX,meitu.com,🍂 Domestic
+- DOMAIN-SUFFIX,meitudata.com,🍂 Domestic
+- DOMAIN-SUFFIX,meipai.com,🍂 Domestic
+# > YYeTs
+- DOMAIN-SUFFIX,zmzapi.com,🍂 Domestic
+- DOMAIN-SUFFIX,zimuzu.tv,🍂 Domestic
+- DOMAIN-SUFFIX,zmzfile.com,🍂 Domestic
+- DOMAIN-SUFFIX,zmzapi.net,🍂 Domestic
+# > 蛋蛋赞
+- DOMAIN-SUFFIX,baduziyuan.com,🍂 Domestic
+- DOMAIN-SUFFIX,com-hs-hkdy.com,🍂 Domestic
+- DOMAIN-SUFFIX,czybjz.com,🍂 Domestic
+- DOMAIN-SUFFIX,dandanzan.com,🍂 Domestic
+- DOMAIN-SUFFIX,fjhps.com,🍂 Domestic
+- DOMAIN-SUFFIX,kuyunbo.club,🍂 Domestic
+# > Baidu
+- DOMAIN-SUFFIX,baidu.com,🍂 Domestic
+- DOMAIN-SUFFIX,baidubcr.com,🍂 Domestic
+- DOMAIN-SUFFIX,bdstatic.com,🍂 Domestic
+# > ChinaNet
+- DOMAIN-SUFFIX,189.cn,🍂 Domestic
+- DOMAIN-SUFFIX,21cn.com,🍂 Domestic
+# > ByteDance
+- DOMAIN-SUFFIX,bytecdn.cn,🍂 Domestic
+- DOMAIN-SUFFIX,pstatp.com,🍂 Domestic
+- DOMAIN-SUFFIX,snssdk.com,🍂 Domestic
+- DOMAIN-SUFFIX,toutiao.com,🍂 Domestic
+# > Content Delivery Network
+# > Akamai
+- DOMAIN-SUFFIX,akadns.net,🍂 Domestic
+# - DOMAIN-SUFFIX,akamai.net,🍂 Domestic
+# - DOMAIN-SUFFIX,akamaiedge.net,🍂 Domestic
+# - DOMAIN-SUFFIX,akamaihd.net,🍂 Domestic
+# - DOMAIN-SUFFIX,akamaistream.net,🍂 Domestic
+# - DOMAIN-SUFFIX,akamaized.net,🍂 Domestic
+# > ChinaNetCenter
+- DOMAIN-SUFFIX,chinanetcenter.com,🍂 Domestic
+- DOMAIN-SUFFIX,wangsu.com,🍂 Domestic
+# > IP Query
+- DOMAIN-SUFFIX,ipip.net,🍂 Domestic
+- DOMAIN-SUFFIX,ip.cn,🍂 Domestic
+- DOMAIN-SUFFIX,ip.la,🍂 Domestic
+- DOMAIN-SUFFIX,ip-cdn.com,🍂 Domestic
+- DOMAIN-SUFFIX,ipv6-test.com,🍂 Domestic
+- DOMAIN-SUFFIX,test-ipv6.com,🍂 Domestic
+- DOMAIN-SUFFIX,whatismyip.com,🍂 Domestic
+- DOMAIN,ip.bjango.com,🍂 Domestic
+# > Other
+- DOMAIN-SUFFIX,40017.cn,🍂 Domestic
+- DOMAIN-SUFFIX,broadcasthe.net,🍂 Domestic
+- DOMAIN-SUFFIX,cailianpress.com,🍂 Domestic
+- DOMAIN-SUFFIX,chdbits.co,🍂 Domestic
+- DOMAIN-SUFFIX,chushou.tv,🍂 Domestic
+- DOMAIN-SUFFIX,cmbchina.com,🍂 Domestic
+- DOMAIN-SUFFIX,cmbimg.com,🍂 Domestic
+- DOMAIN-SUFFIX,cmct.tv,🍂 Domestic
+- DOMAIN-SUFFIX,cmvideo.cn,🍂 Domestic
+- DOMAIN-SUFFIX,cnlang.org,🍂 Domestic
+- DOMAIN-SUFFIX,doubanio.com,🍂 Domestic
+- DOMAIN-SUFFIX,douyu.com,🍂 Domestic
+- DOMAIN-SUFFIX,douyucdn.cn,🍂 Domestic
+- DOMAIN-SUFFIX,dxycdn.com,🍂 Domestic
+- DOMAIN-SUFFIX,hicloud.com,🍂 Domestic
+- DOMAIN-SUFFIX,hdchina.org,🍂 Domestic
+- DOMAIN-SUFFIX,hdcmct.org,🍂 Domestic
+- DOMAIN-SUFFIX,ithome.com,🍂 Domestic
+- DOMAIN-SUFFIX,kkmh.com,🍂 Domestic
+- DOMAIN-SUFFIX,ksosoft.com,🍂 Domestic
+- DOMAIN-SUFFIX,maoyun.tv,🍂 Domestic
+- DOMAIN-SUFFIX,meituan.net,🍂 Domestic
+- DOMAIN-SUFFIX,mobike.com,🍂 Domestic
+- DOMAIN-SUFFIX,mubu.com,🍂 Domestic
+- DOMAIN-SUFFIX,myzaker.com,🍂 Domestic
+- DOMAIN-SUFFIX,ourbits.club,🍂 Domestic
+- DOMAIN-SUFFIX,passthepopcorn.me,🍂 Domestic
+- DOMAIN-SUFFIX,paypal.com,🍂 Domestic
+- DOMAIN-SUFFIX,paypalobjects.com,🍂 Domestic
+- DOMAIN-SUFFIX,privatehd.to,🍂 Domestic
+- DOMAIN-SUFFIX,redacted.ch,🍂 Domestic
+- DOMAIN-SUFFIX,ruguoapp.com,🍂 Domestic
+- DOMAIN-SUFFIX,smzdm.com,🍂 Domestic
+- DOMAIN-SUFFIX,sogou.com,🍂 Domestic
+- DOMAIN-SUFFIX,teamviewer.com,🍂 Domestic
+- DOMAIN-SUFFIX,totheglory.im,🍂 Domestic
+- DOMAIN-SUFFIX,udacity.com,🍂 Domestic
+- DOMAIN-SUFFIX,xmcdn.com,🍂 Domestic
+- DOMAIN-SUFFIX,yangkeduo.com,🍂 Domestic
+- DOMAIN-SUFFIX,zhihu.com,🍂 Domestic
+- DOMAIN-SUFFIX,zhimg.com,🍂 Domestic
+#USER-AGENT,NeteaseMusic*,🍂 Domestic
+#USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*,🍂 Domestic
+
+# > IQIYI
+- IP-CIDR,101.227.0.0/16,🍂 Domestic
+- IP-CIDR,101.224.0.0/13,🍂 Domestic
+- IP-CIDR,119.176.0.0/12,🍂 Domestic
+
+# > Youku
+- IP-CIDR,106.11.0.0/16,🍂 Domestic
+
+# GeoIP China
+- GEOIP,CN,🍂 Domestic
