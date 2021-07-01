@@ -15,6 +15,20 @@ https://www.bilibili.com/video/BV1Hh41127qK?from=search&seid=1816983805964064672
 
 Similar blogs
 
+### HYQ try
+
+install node.js
+```
+gsudo
+hexo init
+hexo new -s
+npm install hexo-deployer-git --save
+vim .\_config.yml
+hexo s # start at local
+hexo d # deploy and push to github
+hexo g # generate files
+```
+
 ### Available themes
 
 https://github.com/artchen/hexo-theme-memory
@@ -24,4 +38,17 @@ https://sharvaridesai.gitlab.io/hexo-theme-standrews/
 https://www.codeblocq.com/assets/projects/hexo-theme-phantom/
 
 ## HUGO
+
+### Install HUGO
+
+#### Set up Your Directories 
+
+```
+create file
+\bin file \Sites file
+Download the latest zipped Hugo executable from Hugo Releases.
+Extract all contents to your ..\Hugo\bin folder.
+add executable to the PATH
+set PATH=%PATH%;C:\Hugo\bin
+```
 
