@@ -41,8 +41,6 @@ https://www.codeblocq.com/assets/projects/hexo-theme-phantom/
 
 ### Install HUGO
 
-#### Set up Your Directories 
-
 ```
 create file
 \bin file \Sites file
@@ -51,4 +49,50 @@ Extract all contents to your ..\Hugo\bin folder.
 add executable to the PATH
 set PATH=%PATH%;C:\Hugo\bin
 ```
+
+### Create a New Site
+
+```
+cd D:\OneDrive - mail.ustc.edu.cn\homepage
+hugo new site shaojiemike
+    Congratulations! Your new Hugo site is created in D:\OneDrive - mail.ustc.edu.cn\homepage\HUGO\shaojiemike.
+
+    Just a few more steps and you're ready to go:
+
+    1. Download a theme into the same-named folder.
+    Choose a theme from https://themes.gohugo.io/ or
+    create your own with the "hugo new theme <THEMENAME>" command.
+    2. Perhaps you want to add some content. You can add single files
+    with "hugo new <SECTIONNAME>\<FILENAME>.<FORMAT>".
+    3. Start the built-in live server via "hugo server".
+
+    Visit https://gohugo.io/ for quickstart guide and full documentation.
+
+```
+
+### Add/use a theme
+
+```
+cd shaojiemike\themes
+git clone --depth 1 https://github.com/carsonip/hugo-theme-minos
+echo theme = \"hugo-theme-minos\" >> ../config.toml # windows 下语法不同
+```
+
+### Add Some Content
+```
+hugo new posts/my-first-post.md
+edit
+```
+
+### Start the Hugo server local/static
+```
+hugo server -D
+hugo -D
+```
+
+### Hugo中TaxonomyTemplate 实现的 tags categories bugs
+
+由于目录生成在cn域名下，但是我没有学校的域名权限，所以需要生成静态文件后还要手动修改
+
+public/tags/index.html 里 /tags前加 /~shaojiemike
 
