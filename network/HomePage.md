@@ -96,3 +96,17 @@ hugo -D
 
 public/tags/index.html 里 /tags前加 /~shaojiemike
 
+### 计数器
+```
+<footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2021 谭邵杰的计算机奇妙旅程 
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+            
+        </div>
+        <IMG SRC="/cgi-bin/Count.cgi?df=shaojiemike.dat">
+    </div>
+```
+
