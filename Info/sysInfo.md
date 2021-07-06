@@ -122,6 +122,9 @@ Linux version 4.15.0-139-generic (buildd@lgw01-amd64-035) (gcc version 7.5.0 (Ub
 df -h
 du -h --max-depth=1
 sudo fdisk -l
+$ df -h /
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2       880G  672G  164G  81% /
 ```
 
 ### disk quota
