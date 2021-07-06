@@ -21,7 +21,7 @@ wget http://home.ustc.edu.cn/~huangyeqi/resources/zsh.tar
 wget https://github.com/zsh-users/zsh/archive/refs/tags/zsh-5.8.tar.gz
 wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz
 tar xvf zsh.tar -C $HOME
-tar zxvf zsh-5.8.tar.gz -C $HOME/Download
+tar zxvf zsh-zsh-5.8.tar.gz -C $HOME/Download
 tar zxvf autoconf-2.71.tar.gz -C $HOME/Download
 
 cd autoconf-2.71
