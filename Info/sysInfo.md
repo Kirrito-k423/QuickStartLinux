@@ -130,6 +130,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 ### disk quota
 ```
 quota
+lfs quota -uh sca3173 ~ # Beijing cluster
 diskUsage 3 hours 统计一次
 ```
 ### file nums

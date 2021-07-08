@@ -90,11 +90,19 @@ hugo server -D
 hugo -D
 ```
 
-### Hugo中TaxonomyTemplate 实现的 tags categories bugs
+### Hugo中TaxonomyTemplate 实现的 tags categories series的bugs
 
 由于目录生成在cn域名下，但是我没有学校的域名权限，所以需要生成静态文件后还要手动修改
 
 public/tags/index.html 里 /tags前加 /~shaojiemike
+
+替换
+<a href="/series/
+<a href="/~shaojiemike/series/
+
+<a href="/categories/
+<a href="/~shaojiemike/categories/
+
 
 ### 计数器
 ```
