@@ -165,6 +165,8 @@ where ROTA means rotational device
 ```
 hostname -I | awk '{print $1}'
 nmcli -p device show
+ip a |less
+ifconfig
 ```
 ## Motherboard model
 ```
