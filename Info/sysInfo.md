@@ -167,6 +167,7 @@ hostname -I | awk '{print $1}'
 nmcli -p device show
 ip a |less
 ifconfig
+ip route | grep default
 ```
 ## Motherboard model
 ```
