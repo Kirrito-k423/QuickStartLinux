@@ -31,6 +31,7 @@ lstopo-no-graphics
 ## memory
 ```
 cat /proc/meminfo
+free -h
 ```
 
 ## architecture
