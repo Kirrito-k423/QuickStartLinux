@@ -31,6 +31,7 @@ lstopo-no-graphics
 ## memory
 ```
 cat /proc/meminfo
+free -h
 ```
 
 ## architecture
@@ -130,6 +131,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 ### disk quota
 ```
 quota
+lfs quota -uh sca3173 ~ # Beijing cluster
 diskUsage 3 hours 统计一次
 ```
 ### file nums
@@ -164,6 +166,9 @@ where ROTA means rotational device
 ```
 hostname -I | awk '{print $1}'
 nmcli -p device show
+ip a |less
+ifconfig
+ip route | grep default
 ```
 ## Motherboard model
 ```
