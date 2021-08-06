@@ -24,6 +24,11 @@ lscpu
 
 “NUMA node” represents the memory architecture; “NUMA” stands for “non-uniform memory architecture”. In your system, each socket is attached to certain DIMM slots, and each physical CPU package contains a memory controller which handles part of the total RAM. As a result, not all physical memory is equally accessible from all CPUs: one physical CPU can directly access the memory it controls, but has to go through the other physical CPU to access the rest of memory. In your system, logical cores 0–13 and 28–41 are in one NUMA node, the rest in the other. So yes, one NUMA node equals one socket, at least in typical multi-socket Xeon systems.
 
+### cpu temperature 温度
+```
+sudo apt-get install lm-sensors hddtemp
+sensors
+```
 ### L2/ L3 cache
 ```
 lstopo-no-graphics
