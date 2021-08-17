@@ -3,7 +3,14 @@
 
 [useful tips](https://www.ele.uri.edu/faculty/vetter/Other-stuff/vi/vimtips.html)
 ## Code comment
+### ctrl V
+Ctrl + V -> VISUAL BLOCK
+Shift + I to insert
 
+### uncomment
+Ctrl + V -> VISUAL BLOCK
+x   to cut
+### other
 can not use ctrl + c (virtul block conflict with paste)
 ```
 big I
@@ -35,13 +42,7 @@ Remove # comments on lines 10-20
 s/#/ /g
 将 # 替换成空格 s
 
-## go/back the location
 
-ctrl + O/I
-
-## undo/redo
-
-u / ctrl+r
 
 ## tab multiple lines(14-23)
 
@@ -130,15 +131,38 @@ d to cut
 再输入
 :set noignorecase //恢复到大小写敏感
 
-# 撤销与恢复
+# 撤销与恢复 undo/redo
 
 u   撤销上一步的操作
 Ctrl+r 恢复上一步被撤销的操作
 
-# 前进与后退
+# 前进与后退 go/back the location
 
  Ctrl-O 执行后退，使用 Ctrl-I 执行前进。
 
+# 移动游标by word
+
+w 前进 b 后退
+# 移动游标by word 当insert mode
+alt + w/b
 # 对齐
 typing gg=G will reindent the entire file. 
 In visual mode, typing = will fix indentation of the current section
+
+# mouse scroll
+set mouse=a in /etc/vim/vimrc.local
+
+# insert mode
+
+CTRL-O h  move cursor left 
+CTRL-O l  move cursor right
+CTRL-O j  move cursor down
+CTRL-O k  move cursor up
+
+CTRL-W    delete word to the left of cursor
+CTRL-O D  delete everything to the right of cursor
+CTRL-U    delete everything to the left of cursor
+CTRL-H    backspace/delete
+CTRL-J    insert newline (easier than reaching for the return key)
+CTRL-T    indent current line //缩进
+CTRL-D    un-indent current line
