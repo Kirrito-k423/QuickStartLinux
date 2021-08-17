@@ -25,3 +25,8 @@ git reset
 git lfs
 
 ```
+
+## 仓库完整性检测
+```
+git fsck
+```

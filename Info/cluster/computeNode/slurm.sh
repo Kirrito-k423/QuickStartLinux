@@ -5,7 +5,7 @@
 #SBATCH -J QuEST
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=FAIL
 #SBATCH --mail-user=shaojiemike@mail.ustc.edu.cn
 
 lscpu > ./out/lscpu.txt
