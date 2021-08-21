@@ -89,6 +89,9 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 # mv vimrc-master/* .
 # sh ~/.vim_runtime/install_awesome_vimrc.sh
 
+# vim 补全插件安装
+#好多插件让我学一下 见/commands/vim.md
+
 # oh my tmux
 cd
 wget https://gitee.com/shaojiemike/oh-my-tmux/repository/blazearchive/master.zip?Expires=1629202041&Signature=Iiolnv2jN6GZM0hBWY09QZAYYPizWCutAMAkhd%2Bwp%2Fo%3D

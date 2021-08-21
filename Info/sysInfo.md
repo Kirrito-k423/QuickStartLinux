@@ -93,6 +93,8 @@ lspci -vnn | grep nvidia -A 12
 
 ## InfiniBand / IB
 ```
+ibstat
+
 > ibv_devinfo
 hca_id: mlx5_0
         transport:                      InfiniBand (0)
