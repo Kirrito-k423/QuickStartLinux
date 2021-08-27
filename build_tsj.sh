@@ -90,7 +90,7 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 # sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # vim 补全插件安装
-#好多插件让我学一下 见/commands/vim.md
+#好多插件让我学一下 见/commands/vim.md 要先装vundle
 
 # oh my tmux
 cd
@@ -100,3 +100,5 @@ ln -s -f ~/oh-my-tmux-master/.tmux.conf ~/.tmux.conf
 cp ~/oh-my-tmux-master/.tmux.conf.local ~/.tmux.conf.local
 
 # 先把已有的 tmux kill-sesstion -t 1
+
+## install tree
