@@ -4,8 +4,6 @@ set -v
 set -e
 
 # build file
-mkdir shaojiemike
-cd shaojiemike
 export HOME=$PWD
 mkdir -p $HOME/.local
 mkdir Download
@@ -19,14 +17,7 @@ mkdir tmux
 mkdir tree
 
 # wget autoconfig / zsh
-cd ../Download
-wget http://home.ustc.edu.cn/~huangyeqi/resources/zsh.tar
-wget https://github.com/zsh-users/zsh/archive/refs/tags/zsh-5.8.tar.gz
-wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz
-wget https://codeload.github.com/tmux/tmux/tar.gz/refs/tags/3.2a
-wget https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz
-wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz
-
+cd ../resources
 tar xvf zsh.tar -C $HOME
 tar zxvf zsh-zsh-5.8.tar.gz -C $HOME/Download
 tar zxvf autoconf-2.71.tar.gz -C $HOME/Download
@@ -34,6 +25,7 @@ tar zxvf tmux-3.2a.tar.gz -C $HOME/Download
 tar zxvf libevent-2.0.19-stable.tar.gz -C $HOME/Download
 tar zxvf ncurses-5.9.tar.gz -C $HOME/Download
 
+cd ../Download
 cd autoconf-2.71
 ./configure --prefix=$HOME/Install/autoconf2.71
 make -j8
@@ -96,7 +88,7 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 # oh my tmux
 cd
 wget https://gitee.com/shaojiemike/oh-my-tmux/repository/blazearchive/master.zip?Expires=1629202041&Signature=Iiolnv2jN6GZM0hBWY09QZAYYPizWCutAMAkhd%2Bwp%2Fo%3D
-unzip  oh-my-tmux-master.zip
+unzip  oh-my-tmux-master.zip -d ~/
 ln -s -f ~/oh-my-tmux-master/.tmux.conf ~/.tmux.conf
 cp ~/oh-my-tmux-master/.tmux.conf.local ~/.tmux.conf.local
 

@@ -7,6 +7,13 @@ chmod +x set_tsj.sh
 ./set_tsj.sh
 ```
 
+## source sh & ./的区别
+1. source 使当前shell读入路径为filepath的shell文件并依次执行文件中的所有语句，通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录。
+2. sh是重新生成一个shell
+3. ./执行文件 查找脚本第一行是否指定了解释器，如果没指定，那么就用当前系统默认的shell(大多数linux默认是bash)，如果指定了解释器，那么就将该脚本交给指定的解释器。
+
+![](https://shaojiemike.oss-cn-hangzhou.aliyuncs.com/img/20171008171636909.png)
+
 ## bugs
 
 ### 1

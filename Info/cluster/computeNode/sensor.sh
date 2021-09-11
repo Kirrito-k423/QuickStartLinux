@@ -1,5 +1,5 @@
 #!/bin/bash
-sensors|awk '$3 ~ /[0-2][0-9]/ {print $3}'|sed 's/^+//g'|sed 's/\.0.*//g'
+sensors|awk '$3 ~ /[0-2][0-9]/ {print $3}'|sed 's/^+//g'|sed 's/\.0.*//g' # awk正则匹配20~30度的行打印其第三列，sed 把标点符号去掉
 checkTemp=`sensors|awk '$3 ~ /[0-1][0-9]/ {print $3}'|sed 's/^+//g'|wc -l` # 注意这里是不是引号，是波浪线同键位
 echo $checkTemp
 while [[ "$checkTemp" == "0" ]]; do #判断的时候注意空格
