@@ -37,3 +37,14 @@ Modify: 2020-02-02 14:46:42.390274014 +0000
 Change: 2020-02-02 14:46:42.390274014 +0000
  Birth: -
 ```
+
+### linux即时聊天
+```
+write supertan pts/42
+Are you online? You can use "write supertan pts/42" to talk with me.
+
+May I ask who I am talking to? What's your WeiXin number?
+
+sudo apt-get install ytalk # 是两窗口的
+ytalk supertan
+```

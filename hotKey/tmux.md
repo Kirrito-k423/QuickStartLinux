@@ -27,6 +27,7 @@ Ctrl+b q：显示窗格编号。
 ```
 
 ## ohmyTmux
+<> + ? 查看可选项
 ### win and panes
 ```
 ctrl + a + <>

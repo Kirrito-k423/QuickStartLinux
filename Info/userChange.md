@@ -17,3 +17,8 @@ sudo su ella717 #login ella717
 sudo chown -R ella717 ella717
 sudo chgrp -R ella717 ella717 
 ```
+
+## add user to sudo
+```
+usermod -aG sudo newuser
+```

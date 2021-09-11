@@ -7,6 +7,7 @@
 Ctrl + V -> VISUAL BLOCK
 Shift + I to insert
 
+快捷键 g c
 ### uncomment
 Ctrl + V -> VISUAL BLOCK
 x   to cut
