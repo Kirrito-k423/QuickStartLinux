@@ -261,6 +261,12 @@ sudo apt-get install exuberant-ctags
 ### 生成函数名索引文件
 ctags -R .
 
+### 添加
+```
+vim ~/.vimrc
+add
+	set tags=~/Download/llvm-project-main/llvm/tags
+```
 ### vim 使用
 ```
 Ctrl + ]

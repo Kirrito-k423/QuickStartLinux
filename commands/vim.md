@@ -12,3 +12,8 @@ https://www.jiqizhixin.com/articles/2020-06-05-4
 ## 安装
 
 Install YouCompleteMe with Vundle.
+
+## CTAGS 跳转
+
+见 hotkey/vim.md
+
