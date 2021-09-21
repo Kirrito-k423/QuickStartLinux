@@ -236,5 +236,11 @@ $ sudo chmod +x /usr/local/bin/batstat
 batstat
 ```
 
-
-
+## 查看系统开机重启历史及原因
+```
+who -b
+who -r
+last reboot
+last -F
+sudo less /var/log/massage
+```
