@@ -40,9 +40,14 @@ Remove # comments on lines 10-20
 
 ### replace
 
-s/#/ /g
-将 # 替换成空格 s
+:s/#/ /g 
+将该行 # 替换成空格 s
 
+:%s/#/ /g 
+将全文 # 替换成空格 s
+
+:s/#/ /gc
+将该行第一个 # 替换成空格 s
 
 
 ## tab multiple lines(14-23)
