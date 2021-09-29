@@ -277,3 +277,6 @@ add
 Ctrl + ]
  Ctrl + t # 返回
 ```
+
+# 显示文件名 show file name
+ctrl + g
