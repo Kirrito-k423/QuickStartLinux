@@ -280,3 +280,17 @@ Ctrl + ]
 
 # 显示文件名 show file name
 ctrl + g
+
+# jump 跳转 开头 末尾
+shift+H 跳转到文件头
+
+shift+L 跳转到文尾
+
+use the "$" character to move to the end of the current line.
+
+use 0 or ^ to move to beginning of the line. And can use Shift + I to move to the beginning and switch to editing mode (Insert).
+
+## 显示
+:set number 显示行数据
+
+vim -O file1 file2 打开两个

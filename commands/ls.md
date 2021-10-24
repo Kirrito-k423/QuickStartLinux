@@ -3,3 +3,7 @@
 ls -tr
 
 ls -altr
+
+## sort by size
+
+ls -S -l
