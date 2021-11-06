@@ -16,3 +16,5 @@ for ((j = 1 ; j < 64 ; j++));
 done
 # awk找到时间行，sed找出时间数字，awk计算
 # source avgTime.sh
+
+## 结合 cluster/autoBestNumTest一起

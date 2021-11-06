@@ -268,6 +268,9 @@ ctags -R .
 
 ### 添加
 ```
+	echo "set tags=$PWD/tags" >> ~/.vimrc
+```
+```
 vim ~/.vimrc
 add
 	set tags=~/Download/llvm-project-main/llvm/tags

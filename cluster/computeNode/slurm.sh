@@ -31,6 +31,7 @@ echo "Temperature is ok!"
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
+# machine info
 lscpu |tee ./out/lscpu.txt
 cat /proc/meminfo |tee ./out/mem.txt
 lsb_release -d | awk -F"\t" '{print $2}' |tee ./out/archi.txt
