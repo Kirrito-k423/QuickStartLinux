@@ -61,7 +61,7 @@ make install
 
 # install tmux without sudo
 cd ../tmux-3.2a
-#sh autogen.sh 
+sh autogen.sh 
 #./configure --prefix=$HOME/Install/tmux # error: "libevent not found"
 
 # sudo apt-get install libevent-dev      #如果成功安装就跳去第6步, 如果提示安装冲突(xxxx冲突  libevent-2.0-5 xxxxx), 就执行如下步骤:
@@ -73,6 +73,7 @@ cd ../tmux-3.2a
 # configure: error: “curses not found”
 # sudo apt-get install  ncurses-dev
 ./configure CFLAGS="-I$HOME/.local/include -I$HOME/.local/include/ncurses" LDFLAGS="-L$HOME/.local/lib -L$HOME/.local/include/ncurses -L$HOME/.local/include"
+
 CPPFLAGS="-I$HOME/.local/include -I$HOME/.local/include/ncurses" LDFLAGS="-static -L$HOME/.local/include -L$HOME/.local/include/ncurses -L$HOME/.local/lib" make
 
 # add tmux bin to path
