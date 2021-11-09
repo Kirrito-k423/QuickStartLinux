@@ -1,5 +1,20 @@
 ﻿# QuickStartLinux
 
+## build command
+```
+cp resources
+chmod +x build_tsj_noNet.sh
+./build_tsj_noNet.sh
+chmod +x build_tsj_noNet_Part2.sh
+./build_tsj_noNet_Part2.sh
+```
+may need to delete `^M` each line
+```
+dos2unix build_tsj.sh
+dos2unix build_tsj_Part2.sh
+```
+
+https://www.suse.com/support/kb/doc/?id=000018317
 ## start command
 
 ```shell

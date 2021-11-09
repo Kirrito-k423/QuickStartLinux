@@ -38,72 +38,73 @@ autoconf -i
 ./configure --prefix=$HOME/Install/zsh
 make -j8
 make install
+# must fail beacause of make test
 
-# install libevent for tmux
-cd ../libevent-2.0.19-stable
-./configure --prefix=$HOME/.local --disable-shared
-make -j8
-make install
+# # install libevent for tmux
+# cd ../libevent-2.0.19-stable
+# ./configure --prefix=$HOME/.local --disable-shared
+# make -j8
+# make install
 
-# install ncurses for tmux
-cd ../ncurses-5.9
-./configure --prefix=$HOME/.local
-make -j8
-make install
+# # install ncurses for tmux
+# cd ../ncurses-5.9
+# ./configure --prefix=$HOME/.local
+# make -j8
+# make install
 
-# install tmux without sudo
-cd ../tmux-3.2a
-sh autogen.sh 
-#./configure --prefix=$HOME/Install/tmux # error: "libevent not found"
+# # install tmux without sudo
+# cd ../tmux-3.2a
+# sh autogen.sh 
+# #./configure --prefix=$HOME/Install/tmux # error: "libevent not found"
 
-# sudo apt-get install libevent-dev      #如果成功安装就跳去第6步, 如果提示安装冲突(xxxx冲突  libevent-2.0-5 xxxxx), 就执行如下步骤:
-# sudo dpkg --purge --force-depends  libevent-2.0-5    # 这里的 libevent-2.0-5 按照自己系统提示是什么冲突, 就改成什么
-# sudo apt-get install  libevent-dev      #如果成功安装就跳去第6步, 失败就执行如下步骤
-# sudo apt-get install -f               # 自动修复依赖关系     
-# sudo apt-get install  libevent-dev    #  到这里应该就可以顺利安装libevent库了
+# # sudo apt-get install libevent-dev      #如果成功安装就跳去第6步, 如果提示安装冲突(xxxx冲突  libevent-2.0-5 xxxxx), 就执行如下步骤:
+# # sudo dpkg --purge --force-depends  libevent-2.0-5    # 这里的 libevent-2.0-5 按照自己系统提示是什么冲突, 就改成什么
+# # sudo apt-get install  libevent-dev      #如果成功安装就跳去第6步, 失败就执行如下步骤
+# # sudo apt-get install -f               # 自动修复依赖关系     
+# # sudo apt-get install  libevent-dev    #  到这里应该就可以顺利安装libevent库了
 
-# configure: error: “curses not found”
-# sudo apt-get install  ncurses-dev
-./configure CFLAGS="-I$HOME/.local/include -I$HOME/.local/include/ncurses" LDFLAGS="-L$HOME/.local/lib -L$HOME/.local/include/ncurses -L$HOME/.local/include"
+# # configure: error: “curses not found”
+# # sudo apt-get install  ncurses-dev
+# ./configure CFLAGS="-I$HOME/.local/include -I$HOME/.local/include/ncurses" LDFLAGS="-L$HOME/.local/lib -L$HOME/.local/include/ncurses -L$HOME/.local/include"
 
 
-CPPFLAGS="-I$HOME/.local/include -I$HOME/.local/include/ncurses" LDFLAGS="-static -L$HOME/.local/include -L$HOME/.local/include/ncurses -L$HOME/.local/lib" make
+# CPPFLAGS="-I$HOME/.local/include -I$HOME/.local/include/ncurses" LDFLAGS="-static -L$HOME/.local/include -L$HOME/.local/include/ncurses -L$HOME/.local/lib" make
 
-# add tmux bin to path
-cp tmux $HOME/.local/bin
+# # add tmux bin to path
+# cp tmux $HOME/.local/bin
 
-# vimrc
-# git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+# # vimrc
+# # git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+# # sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+# # 没网 gitee
+# cd ~/resources
+# # wget https://gitee.com/shaojiemike/vimrc/repository/blazearchive/master.zip?Expires=1629203607&Signature=q3F3A6aXR7%2F%2Fj7ALAabQqSKMr8CcV1XtzPBnFQ1fbyU%3D
+# unzip vimrc-master.zip -d ~/.vim_runtime
+# cd ~/.vim_runtime
+# mv vimrc-master/* .
 # sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-# 没网 gitee
-cd ~/resources
-# wget https://gitee.com/shaojiemike/vimrc/repository/blazearchive/master.zip?Expires=1629203607&Signature=q3F3A6aXR7%2F%2Fj7ALAabQqSKMr8CcV1XtzPBnFQ1fbyU%3D
-unzip vimrc-master.zip -d ~/.vim_runtime
-cd ~/.vim_runtime
-mv vimrc-master/* .
-sh ~/.vim_runtime/install_awesome_vimrc.sh
+# # vim 补全插件安装
+# #好多插件让我学一下 见/commands/vim.md 要先装vundle
 
-# vim 补全插件安装
-#好多插件让我学一下 见/commands/vim.md 要先装vundle
+# # oh my tmux
+# cd ~/resources
+# # wget https://gitee.com/shaojiemike/oh-my-tmux/repository/blazearchive/master.zip?Expires=1629202041&Signature=Iiolnv2jN6GZM0hBWY09QZAYYPizWCutAMAkhd%2Bwp%2Fo%3D
+# unzip  oh-my-tmux-master.zip -d ~/
+# ln -s -f ~/oh-my-tmux-master/.tmux.conf ~/.tmux.conf
+# cp ~/oh-my-tmux-master/.tmux.conf.local ~/.tmux.conf.local
 
-# oh my tmux
-cd ~/resources
-# wget https://gitee.com/shaojiemike/oh-my-tmux/repository/blazearchive/master.zip?Expires=1629202041&Signature=Iiolnv2jN6GZM0hBWY09QZAYYPizWCutAMAkhd%2Bwp%2Fo%3D
-unzip  oh-my-tmux-master.zip -d ~/
-ln -s -f ~/oh-my-tmux-master/.tmux.conf ~/.tmux.conf
-cp ~/oh-my-tmux-master/.tmux.conf.local ~/.tmux.conf.local
+# # 先把已有的 tmux kill-sesstion -t 1
 
-# 先把已有的 tmux kill-sesstion -t 1
-
-## install tree
-cd ~/resources
-# download latest tree source to home directory
-# wget http://mama.indstate.edu/users/ice/tree/src/tree-1.8.0.tgz
-# unpack
-tar xzfv tree-1.8.0.tgz
-cd tree-1.8.0/
-make
-# install to $HOME directory
-make install prefix=$HOME/Install/tree
-# ADD PATH
+# ## install tree
+# cd ~/resources
+# # download latest tree source to home directory
+# # wget http://mama.indstate.edu/users/ice/tree/src/tree-1.8.0.tgz
+# # unpack
+# tar xzfv tree-1.8.0.tgz
+# cd tree-1.8.0/
+# make
+# # install to $HOME directory
+# make install prefix=$HOME/Install/tree
+# # ADD PATH
