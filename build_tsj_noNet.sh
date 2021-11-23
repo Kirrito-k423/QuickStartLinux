@@ -6,15 +6,15 @@ set -e
 # build file
 export HOME=$PWD
 mkdir -p $HOME/.local
-mkdir Download
-mkdir Install
-mkdir github
+mkdir -p Download
+mkdir -p Install
+mkdir -p github
 cd Install
-mkdir lib
-mkdir zsh
-mkdir autoconf-2.71
-mkdir tmux
-mkdir tree
+mkdir -p lib
+mkdir -p zsh
+mkdir -p autoconf-2.71
+mkdir -p tmux
+mkdir -p tree
 
 # wget autoconfig / zsh
 cd ../resources
@@ -24,6 +24,7 @@ tar zxvf autoconf-2.71.tar.gz -C $HOME/Download
 tar zxvf tmux-3.2a.tar.gz -C $HOME/Download
 tar zxvf libevent-2.0.19-stable.tar.gz -C $HOME/Download
 tar zxvf ncurses-5.9.tar.gz -C $HOME/Download
+tar xvf ncurses-6.3.tar -C $HOME/Download
 
 cd ../Download
 cd autoconf-2.71
@@ -31,6 +32,36 @@ cd autoconf-2.71
 make -j8
 make install
 export PATH=$HOME/Install/autoconf-2.71/bin:$PATH
+
+#install for zsh tmux
+cd ../libevent-2.0.19-stable
+./configure --prefix=$HOME/.local --disable-shared
+make -j8
+make install
+
+# Ncurses 6.0 Compilation Error - error: expected ')' before 'int'
+export CPPFLAGS="-P"
+# cd ../ncurses-5.9
+# # export CXXFLAGS=' -fPIC'
+# # export CFLAGS=' -fPIC'
+# # ./configure --prefix=$HOME/.local --enable-shared --without-debug --enable-widec
+# ./configure --prefix=$HOME/.local
+# make -j8
+# make install
+
+cd ../ncurses-6.3
+export CXXFLAGS=' -fPIC'
+export CFLAGS=' -fPIC'
+./configure --prefix=$HOME/.local --enable-shared --without-debug --enable-widec
+# ./configure --prefix=$HOME/.local
+make -j8
+make install
+
+INSTALL_PATH="$HOME/.local"
+export PATH=$INSTALL_PATH/bin:$PATH
+export LD_LIBRARY_PATH=$INSTALL_PATH/lib:$LD_LIBRARY_PATH
+export CFLAGS=-I$INSTALL_PATH/include
+export CPPFLAGS="-I$INSTALL_PATH/include" LDFLAGS="-L$INSTALL_PATH/lib"
 
 cd ../zsh-zsh-5.8/
 autoheader

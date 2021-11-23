@@ -26,22 +26,29 @@ export HOME=$PWD
 # tar zxvf ncurses-5.9.tar.gz -C $HOME/Download
 
 export PATH=$HOME/Install/autoconf-2.71/bin:$PATH
-
+INSTALL_PATH="$HOME/.local"
+export PATH=$INSTALL_PATH/bin:$PATH
+export LD_LIBRARY_PATH=$INSTALL_PATH/lib:$LD_LIBRARY_PATH
+export CFLAGS=-I$INSTALL_PATH/include
+export CPPFLAGS="-I$INSTALL_PATH/include" LDFLAGS="-L$INSTALL_PATH/lib"
 
 # install libevent for tmux
-cd Download/libevent-2.0.19-stable
-./configure --prefix=$HOME/.local --disable-shared
-make -j8
-make install
+# cd Download/libevent-2.0.19-stable
+# ./configure --prefix=$HOME/.local --disable-shared
+# make -j8
+# make install
 
-# install ncurses for tmux
-cd ../ncurses-5.9
-./configure --prefix=$HOME/.local
-make -j8
-make install
+# install ncurses for tmux //move forward for zsh 
+# cd ../ncurses-5.9
+# ./configure --prefix=$HOME/.local
+# make -j8
+# make install
+
+# install automake for tmux aclocal
+# apt-get install autogen automake
 
 # install tmux without sudo
-cd ../tmux-3.2a
+cd Download/tmux-3.2a
 sh autogen.sh 
 #./configure --prefix=$HOME/Install/tmux # error: "libevent not found"
 

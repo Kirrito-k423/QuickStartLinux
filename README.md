@@ -90,3 +90,14 @@ sort -nrk 2 tmp.txt
 ### 7 vim color theme and quick
 [1](https://linuxhint.com/best_vim_color_schemes/)
 [2](https://github.com/rafi/awesome-vim-colorschemes)
+
+## zsh configures bugs
+```
+checking for library containing tgetent... no
+configure: error: in `/home/pp11/shaojiemike/Download/zsh-zsh-5.8':
+configure: error: "No terminal handling library was found on your system.
+This is probably a library called 'curses' or 'ncurses'.  You may
+need to install a package called 'curses-devel' or 'ncurses-devel' on your
+system."
+See `config.log' for more details
+```
