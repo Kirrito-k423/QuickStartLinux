@@ -49,6 +49,8 @@ Remove # comments on lines 10-20
 :s/#/ /gc
 将该行第一个 # 替换成空格 s
 
+:34,. s/
+
 
 ## tab multiple lines(14-23)
 
