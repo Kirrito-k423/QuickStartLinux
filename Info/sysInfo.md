@@ -12,6 +12,7 @@ ip command : Recommended new network config utility.
 ```
 cat /proc/cpuinfo
 lscpu
+cat /proc/cpuinfo |grep MHz|uniq //查看频率
 ```
 [stack](https://unix.stackexchange.com/questions/468766/understanding-output-of-lscpu)
 “CPU(s): 56” represents the number of logical cores, which equals “Thread(s) per core” × “Core(s) per socket” × “Socket(s)”.
@@ -24,6 +25,7 @@ lscpu
 
 “NUMA node” represents the memory architecture; “NUMA” stands for “non-uniform memory architecture”. In your system, each socket is attached to certain DIMM slots, and each physical CPU package contains a memory controller which handles part of the total RAM. As a result, not all physical memory is equally accessible from all CPUs: one physical CPU can directly access the memory it controls, but has to go through the other physical CPU to access the rest of memory. In your system, logical cores 0–13 and 28–41 are in one NUMA node, the rest in the other. So yes, one NUMA node equals one socket, at least in typical multi-socket Xeon systems.
 
+`Stepping`It is a version number. The processor design is tweaked or fixed over the course of the product lifetime, and the stepping number identifies how old (or new) it is.
 ### cpu temperature 温度
 ```
 sudo apt-get install lm-sensors hddtemp
