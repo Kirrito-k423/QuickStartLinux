@@ -10,3 +10,9 @@ Where 16224,16482 are the **start** line number and **end** line number
 
 
 ![](https://shaojiemike.oss-cn-hangzhou.aliyuncs.com/img/20211109222943.png)
+
+
+## watch ls
+```
+ while true ;do ls -al | sed -n '1p'; sleep 0.5; done;
+```
