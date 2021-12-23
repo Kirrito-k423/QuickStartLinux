@@ -26,3 +26,9 @@ cmdline就是程序运行时输入的命令行命令；
 environ记录了进程运行时的环境变量；
 
 fd目录下是进程打开或使用的文件的符号连接。
+
+## kill 正则表达时 MPI
+
+ps aux | grep apache | awk '{print $2}' | xargs kill -9 # 列出 PID 並砍掉 Process
+
+https://blog.longwin.com.tw/2012/06/linux-kill-process-by-name-2012/
