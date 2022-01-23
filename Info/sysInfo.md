@@ -1,5 +1,8 @@
 # sysInfo
 ```
+neofetch
+```
+```
 lspci command : List all PCI devices.
 lshw command : List all hardware.
 dmidecode command : List all hardware data from BIOS.
@@ -49,6 +52,7 @@ uname -a
 Ubuntu
 ```
 cat /etc/version
+lsb_release -a
 ```
 CentOS
 ```
