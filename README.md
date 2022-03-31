@@ -30,6 +30,33 @@ chmod +x set_tsj.sh
 ![](https://shaojiemike.oss-cn-hangzhou.aliyuncs.com/img/20171008171636909.png)
 
 ## bugs
+### proxy
+```
+#YJH proxy
+export proxy_addr=127.0.0.1
+export proxy_http_port=7233
+export proxy_socks_port=7233
+export port=80
+
+function git_proxy() {
+    export http_proxy=sock5://$proxy_addr:$port
+    export https_proxy=sock5://$proxy_addr:$port
+    export all_proxy=socks5://$proxy_addr:$port
+}
+function set_proxy() {
+    export http_proxy=http://$proxy_addr:$proxy_http_port
+    export https_proxy=http://$proxy_addr:$proxy_http_port
+    export all_proxy=socks5://$proxy_addr:$proxy_socks_port
+}
+function unset_proxy() {
+    unset http_proxy
+    unset https_proxy
+    unset all_proxy
+}
+function test_proxy() {
+    curl -v https://www.google.com 2>&1 | egrep 'HTTP/(2|1.1) 200'
+}
+```
 
 ### 1
 .zshrc:source:19: no such file or directory: /home/chivier/.profile
