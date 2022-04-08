@@ -73,3 +73,10 @@ opens ~/.tmux.conf.local with the editor defined by the $EDITOR environment vari
     1. yank
     2. xclip xsel之类的
     3. macOS https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+
+#### macOS
+
+```
+fn+mouseDrag
+command+C
+```
