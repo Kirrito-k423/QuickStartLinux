@@ -57,3 +57,19 @@ opens ~/.tmux.conf.local with the editor defined by the $EDITOR environment vari
 
 <prefix>P	用于选择要从中粘贴的粘贴缓冲区
 ```
+
+### 不能复制到windows的问题
+
+1. 是否是黄色选择栏   
+    #设置鼠标可用
+    #setw -g mode-mouse on   
+2. 如果是黄色，不可以复制
+   
+1. 复制，向前翻页可能会没有换行符
+    
+    按住 shift，鼠标左键选择文本，会出现与黄色高亮不同的浅白高亮，注意全程按住 shift。不用ctrl+C。esc退出
+1. 通过转发 https://github.com/wincent/clipper
+2. 其余的都是本地的tmux，复制到本地的
+    1. yank
+    2. xclip xsel之类的
+    3. macOS https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
