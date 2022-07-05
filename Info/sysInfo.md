@@ -178,7 +178,7 @@ sda      8:0    0  1.1T  0 disk
 ├─sda1   8:1    0  512M  0 part /boot/efi
 └─sda2   8:2    0  1.1T  0 part /
 ```
-where ROTA means rotational device
+where RO(ROTA) means rotational device (0代表false=HDD，1代表true=SSD)。可见该盘是机械硬盘。
 
 上面的sda,代表第一块SCSI disk。同理第二块第三块SCSI disk叫做sdb,sdc。
 
