@@ -179,6 +179,14 @@ sda      8:0    0  1.1T  0 disk
 └─sda2   8:2    0  1.1T  0 part /
 ```
 where ROTA means rotational device
+
+上面的sda,代表第一块SCSI disk。同理第二块第三块SCSI disk叫做sdb,sdc。
+
+sda1, sda2是sda这块磁盘的第一和二块分区。
+
+对于老的IDE/ATA-1 drives盘叫做 hda (and hdb, hdc, etc.)
+
+
 ## Network card
 ```
 # lspci | egrep -i ‘network|ethernet’ (Lists PCI network devices in the system)
