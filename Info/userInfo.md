@@ -40,11 +40,16 @@ Change: 2020-02-02 14:46:42.390274014 +0000
 
 ### linux即时聊天
 ```
-write supertan pts/42
-Are you online? You can use "write supertan pts/42" to talk with me.
+A> w |grep ud
+udfrt    pts/26   202.141.183.48   11:20    8:16   0.16s  0.16s -zsh
+A> tty
+/dev/pts/30
+A> write udfrt pts/26
+Are you online? You can use "write A pts/30" to talk with me.
 
 May I ask who I am talking to? What's your WeiXin number?
-
+```
+```
 sudo apt-get install ytalk # 是两窗口的
 ytalk supertan
 ```
