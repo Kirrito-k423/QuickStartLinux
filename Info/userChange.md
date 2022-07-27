@@ -1,5 +1,9 @@
 # userChange
 
+## add user by step
+```
+adduser username
+```
 
 ## new user to sudo
 
