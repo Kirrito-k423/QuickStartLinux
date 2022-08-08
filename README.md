@@ -96,7 +96,7 @@ git config oh-my-zsh.hide-status 1
 $ git config --add oh-my-zsh.hide-dirty 1
 ```
 
-### 5
+### 5 vim 
 
 The legacy SnipMate parser is deprecated. Please see :h SnipMate-deprecate.
 Press ENTER or type command to continue

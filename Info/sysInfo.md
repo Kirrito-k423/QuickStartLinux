@@ -37,6 +37,8 @@ sensors
 ### L2/ L3 cache
 ```
 lstopo-no-graphics
+sudo dmidecode -t cache
+getconf -a | grep CACHE #是字节
 ```
 ## memory
 ```
