@@ -103,3 +103,9 @@ make
 # install to $HOME directory
 make install prefix=$HOME/Install/tree
 # ADD PATH
+
+## Install fzf
+# wget https://github.com/junegunn/fzf/releases/download/0.32.1/fzf-0.32.1-linux_amd64.tar.gz
+cd ~/resources
+tar xzf fzf-0.32.1-linux_amd64.tar.gz
+mv fzf $HOME/.local/bin

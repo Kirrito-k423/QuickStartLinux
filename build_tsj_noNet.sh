@@ -5,7 +5,7 @@ set -e
 
 # build file
 export HOME=$PWD
-mkdir -p $HOME/.local
+mkdir -p $HOME/.local/bin
 mkdir -p Download
 mkdir -p Install
 mkdir -p github
