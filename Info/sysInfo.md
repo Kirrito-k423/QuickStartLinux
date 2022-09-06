@@ -166,6 +166,11 @@ diskUsage 3 hours 统计一次
 for D in *; do echo $D; find $D -type f| wc -l; done
 ```
 
+### 磁盘挂载时间
+```
+sudo tune2fs -l /dev/sda5
+```
+
 ### Hard drive / SSD
 ```
 cat /sys/block/sda/queue/rotational
@@ -182,11 +187,49 @@ sda      8:0    0  1.1T  0 disk
 ```
 where RO(ROTA) means rotational device (0代表false=HDD，1代表true=SSD)。可见该盘是机械硬盘。
 
+获取磁盘是否可翻转（rotational）即可知道了，可以翻转就是HDD，反之，不可翻转就属于SSD了
+```
+ubuntu@ubuntu:/dev$ cat /sys/block/sda/queue/rotational
+0
+ubuntu@ubuntu:/dev$ cat /sys/block/sdb/queue/rotational
+1
+```
+
 上面的sda,代表第一块SCSI disk。同理第二块第三块SCSI disk叫做sdb,sdc。
 
 sda1, sda2是sda这块磁盘的第一和二块分区。
 
 对于老的IDE/ATA-1 drives盘叫做 hda (and hdb, hdc, etc.)
+
+### USB 判断
+一般U盘会被LINUX认为SCSI设备,如果有SCSI设备那么U盘一般是最后一个SCSI设备. 
+```
+ubuntu@ubuntu:/dev$ udevadm info --query=all --name=sdc1 | grep -iE "ID_FS_TYPE|USB|BUS|scsi|vfat|fat32"
+P: /devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4:1.0/host14/target14:0:0/14:0:0:0/block/sdc/sdc1
+S: disk/by-id/usb-Netac_OnlyDisk_3035308571996406-0:0-part1
+S: disk/by-path/pci-0000:00:14.0-usb-0:4:1.0-scsi-0:0:0:0-part1
+E: DEVLINKS=/dev/disk/by-label/UBUNTU\x2018_0 /dev/disk/by-partuuid/010502f2-d31d-4129-aede-922e0984998e /dev/disk/by-partlabel/Main\x20Data\x20Partition /dev/disk/by-path/pci-0000:00:14.0-usb-0:4:1.0-scsi-0:0:0:0-part1 /dev/disk/by-id/usb-Netac_OnlyDisk_3035308571996406-0:0-part1 /dev/disk/by-uuid/6859-B039
+E: DEVPATH=/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4:1.0/host14/target14:0:0/14:0:0:0/block/sdc/sdc1
+E: ID_BUS=usb
+E: ID_FS_TYPE=vfat
+E: ID_FS_VERSION=FAT32
+E: ID_PATH=pci-0000:00:14.0-usb-0:4:1.0-scsi-0:0:0:0
+E: ID_PATH_TAG=pci-0000_00_14_0-usb-0_4_1_0-scsi-0_0_0_0
+E: ID_USB_DRIVER=usb-storage
+E: ID_USB_INTERFACES=:080650:
+E: ID_USB_INTERFACE_NUM=00
+
+ubuntu@ubuntu:/dev$ udevadm info --query=all --name=sdb1 | grep -iE "ID_FS_TYPE|USB|BUS|scsi|vfat|fat32"
+E: ID_BUS=ata
+E: ID_FS_TYPE=ext4
+```
+removable为1那就是U盘，为0就不属于U盘了。
+```
+ubuntu@ubuntu:/dev$ cat /sys/block/sda/removable
+0
+ubuntu@ubuntu:/dev$ cat /sys/block/sdc/removable
+1
+```
 
 
 ## Network card
