@@ -29,6 +29,7 @@ $ sudo cat /etc/sudoers
 # See the man page for details on how to write a sudoers file.
 #
 Defaults        env_reset
+Defaults env_reset,timestamp_timeout=5
 Defaults        mail_badpass
 Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 
