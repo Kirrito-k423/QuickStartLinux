@@ -8,8 +8,56 @@ cat /etc/passwd | awk -F: '{print $1}'
 
 ## current user in which group
 ```
+# shaojiemike @ node5 in ~ [20:25:31]
+$ id
+用户id=1011(shaojiemike) 组id=1012(shaojiemike) 组=1012(shaojiemike),27(sudo)
+
 $ groups shaojiemike
 shaojiemike : acsastaff sudo
+```
+
+## 查看sudo权限
+### sudoers
+```
+$ sudo cat /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults        env_reset
+Defaults        mail_badpass
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) NOPASSWD:ALL
+chivier ALL=(ALL:ALL) NOPASSWD:ALL
+zhenwei ALL=(ALL:ALL) NOPASSWD:ALL
+# See sudoers(5) for more information on "#include" directives:
+
+#includedir /etc/sudoers.d
+```
+### sudo组继承权限
+```
+# shaojiemike @ node5 in ~ [20:25:26]
+$ cat /etc/group|grep super
+sudo:x:27:user,chivier,zbw,zyy,pac2020,dnailz,ibug,rabbit,monsoon,oroggs,shaojiemike,supertan,micheallei,wyt2000,blankpower,libreliu,pac21,yfy,qcjiang
+supertan:x:1013:
 ```
 
 ## 查看用户创建日期(以 oroggs为例)
