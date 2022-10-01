@@ -32,6 +32,7 @@ Ctrl+b q：显示窗格编号。
 ```
 ctrl + a + <>
 <> + c 		:新建win
+<> + space(空格) 		:水平竖直翻转win
 <prefix> - 	:splits the current pane vertically
 <prefix> _ 	:splits the current pane horizontally
 
