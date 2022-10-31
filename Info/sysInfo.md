@@ -51,6 +51,9 @@ free -h
 uname -a
 ```
 ### how to check linux is centos or ubuntu
+```
+cat /etc/os-release
+```
 Ubuntu
 ```
 cat /etc/version
