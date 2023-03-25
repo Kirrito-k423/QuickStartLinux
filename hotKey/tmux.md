@@ -48,6 +48,7 @@ ctrl + a + <>
 <prefix> e 
 opens ~/.tmux.conf.local with the editor defined by the $EDITOR environment variable (defaults to vim when empty)
 <prefix>m 	打开或关闭鼠标模式 shift+scrolling / esc退出
+<prefix> : 进入命令行，输入set -g mouse on 开启
 
 <prefix>Enter	进入复制模式
 
