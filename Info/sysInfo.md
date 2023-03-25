@@ -51,6 +51,9 @@ free -h
 uname -a
 ```
 ### how to check linux is centos or ubuntu
+```
+cat /etc/os-release
+```
 Ubuntu
 ```
 cat /etc/version
@@ -309,9 +312,71 @@ batstat
 
 ## 查看系统开机重启历史及原因
 ```
+uptime -s
 who -b
 who -r
 last reboot
 last -F
-sudo less /var/log/massage
+sudo less /var/log/massage 或者 /var/log/syslog
+# shaojiemike @ snode6 in ~ [7:23:17]
+$ last -x|grep generi
+runlevel (to lvl 3)   5.4.0-128-generi Wed Oct 19 03:00   still running
+reboot   system boot  5.4.0-128-generi Wed Oct 19 02:58   still running
+runlevel (to lvl 3)   5.4.0-128-generi Mon Oct 10 16:10 - 03:00 (8+10:49)
+reboot   system boot  5.4.0-128-generi Mon Oct 10 16:08   still running
+shutdown system down  5.4.0-107-generi Mon Oct 10 16:06 - 16:08  (00:01)
+```
+
+安装lastcomm来查看最后的指令,可以查看用户和terminal的命令
+```
+apt-get install acct
+```
+
+### 查看systemd journal
+下面判断是否开启
+```
+# shaojiemike @ snode6 in ~ [7:34:17]
+$ ls /var/log/journal
+425611be53af4a899bc0f238fd7848bb
+
+# shaojiemike @ snode6 in ~ [7:35:55]
+$ journalctl --list-boots
+Hint: You are currently not seeing messages from other users and the system.
+      Users in groups 'adm', 'systemd-journal' can see all messages.
+      Pass -q to turn off this notice.
+-8 f16af93f830841ff8d21709c4cc7e941 Fri 2022-08-05 11:03:53 UTC—Fri 2022-08-12 06:25:57 UTC
+-7 595fd39b8721481f90dc054976f3317a Mon 2022-08-15 05:33:40 UTC—Tue 2022-08-16 10:54:00 UTC
+-6 2a5dffb9d6f1422ba4a4c48c020a25ef Tue 2022-08-16 11:00:57 UTC—Wed 2022-08-17 14:41:38 UTC
+-5 cdcedf349d1547baa953c06381e50402 Wed 2022-08-17 15:10:32 UTC—Thu 2022-09-15 06:28:33 UTC
+-4 6a91b63ea2654554ace92be2a2b0c6c9 Tue 2022-09-20 08:48:38 UTC—Fri 2022-10-07 10:34:57 UTC
+-3 b85a79afd1074c818098e2c38b80dc31 Fri 2022-10-07 10:38:52 UTC—Fri 2022-10-07 15:30:24 UTC
+-2 bdf1456c96f24f3db940e8c83da10f2a Sun 2022-10-09 11:39:53 UTC—Mon 2022-10-10 16:06:35 UTC
+-1 e7b27e2353744f6e974aa78c1f5dfa97 Thu 2022-10-13 07:52:27 UTC—Wed 2022-10-19 02:47:10 UTC
+ 0 3e40684f9cb147119c9cdfb1bee15624 Wed 2022-10-19 03:58:07 UTC—Wed 2022-10-19 06:28:24 UTC
+```
+未开启，开启的办法
+```
+$ sudo mkdir /var/log/journal
+$ sudo systemd-tmpfiles --create --prefix /var/log/journal 2>/dev/null
+$ sudo systemctl -s SIGUSR1 kill systemd-journald
+```
+或者修改 `/etc/systemd/journald.conf`
+
+```
+$ journalctl -b -1 -n
+```
+
+### 判断是不是正常重启
+When an unexpected **power off or hardware failure** occurs the filesystems will not be properly **unmounted** so in the next boot you may get logs like this:
+```
+EXT4-fs ... INFO: recovery required ... 
+Starting XFS recovery filesystem ...
+systemd-fsck: ... recovering journal
+systemd-journald: File /var/log/journal/.../system.journal corrupted or uncleanly shut down, renaming and replacing.
+```
+When the system powers off because user **pressed the power button** you get logs like this:
+```
+systemd-logind: Power key pressed.
+systemd-logind: Powering Off...
+systemd-logind: System is powering down.
 ```
